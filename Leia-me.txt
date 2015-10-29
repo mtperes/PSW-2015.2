@@ -1,0 +1,9 @@
+É preciso instalar todas as dependências. Usar o comando "npm install" pela linha de comando no diretório do "server.js"
+
+Lista a ser resolvida:
+
+1º Mudar o servidor de "http" para "https". Assim o navegador poderá guardar a permissão de uso do microfone
+2º Conectar o servidor com o SGBD para guardar as frases que estão sendo recebidas por ajax pelo serviço de transcrição usado pelo navegador
+3º Montar a interface gráfica da página do usuário
+4º Elaborar as outras páginas de interação
+5º Construir o serviço de envio do arquivo final da aula por email
