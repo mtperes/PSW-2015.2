@@ -1,6 +1,14 @@
-var http = require('http');
+var https = require('https');
+var fs = require('fs');
 var app = require('./config/express')();
 
-var servidor = http.createServer(app);
+var options = {
+	key : fs.readFileSync('./certificados/server.key'),
+	cert : fs.readFileSync('./certificados/server.crt'),
+	requestCert : false,
+	rejectUnauthorized: false
+};
 
-servidor.listen(app.get('port'), function(){console.log('Servidor iniciado na porta ' + app.get('port') + '. "ctrl" + "C" para encerrar' )});
+var servidorSSL = https.createServer(options, app);
+
+servidorSSL.listen(app.get('port'), function(){console.log('Servidor HTTPS iniciado na porta ' + app.get('port') + '. "ctrl" + "C" para encerrar' )});

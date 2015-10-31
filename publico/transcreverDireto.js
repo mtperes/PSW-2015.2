@@ -71,7 +71,7 @@ function tratarTransc(falaTranscrita, rotaVariavel, local)
 			inserirTrecho(xhttp.responseText, local); //printa a string retornada pelo servidor no elemento armazenado em "local"
 		}
 	}
-	xhttp.open("GET", ("http://localhost:8080/" + rotaVariavel + "=" + falaTranscrita), true);
+	xhttp.open("GET", ("https://localhost:8080/" + rotaVariavel + "=" + falaTranscrita), true);
 	xhttp.send();
 }
 
@@ -90,3 +90,7 @@ function criarLinha ()
 	aulaTranscrita.appendChild(linha); //coloca essa linha como filha da seção que contém todo o texto da aula
 	return linha; //retorna o elemento criado
 }
+
+
+
+
