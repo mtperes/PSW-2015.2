@@ -1,0 +1,15 @@
+Procedimento de criação da chave e do certificado (auto assinado) necessários para o protocolo HTTPS
+
+1) gerada a chave privada RSA. Comando:
+	openssl genrsa -des3 -out server.key 1024
+	senha: abcd
+	
+2) gerado a requisição de assinatura da chave (auto assinado). Comando:
+	openssl req -new -key server.key -out server.csr
+	
+3) tirando a senha da chave apenas para não precisar inserir essa senha toda vez que o servidor for iniciado. Comando:
+	cp server.key server.key.org
+	openssl rsa -in server.key.org -out server.key
+
+4) gerando o certificado auto assinado. Comando:
+	openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt

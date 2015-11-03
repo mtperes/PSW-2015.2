@@ -6,10 +6,10 @@ module.exports = function()
 	{
 		var texto = req.query.transc; //variável enviada na URL
 		
-		if(texto != "") //somente se for um texto válido
+		if(!!texto) //somente se for um texto válido
 		{
-			console.log('fala transcrita: ' + req.query.transc); //printa o dado na console do servidor
-			res.send(req.query.transc); //cria o html a partir do arquivo "teste3.ejs"
+			console.log('fala transcrita: ' + texto); //printa o dado na console do servidor
+			res.send(texto); //cria o html a partir do arquivo "teste3.ejs"
 		}
 	};
 	
