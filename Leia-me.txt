@@ -1,4 +1,4 @@
-É preciso instalar todas as dependências. Usar o comando "npm install" pela linha de comando no diretório do "server.js".
+É preciso instalar todas as dependências. Usar o comando "npm install" e o comando "bower update" pela linha de comando no diretório do "server.js".
 É necessário criar os arquivos (.key e .crt) correspondentes a chave RSA e ao certificado da chave. Estes arquivos devem ser colocados na pasta certificados. O .gitignore já está configurado para não comitar estes arquivos.
 O servidor está recebendo, por rotas distintas, tando a transcrição temporária quanto a frase definitiva.
 
