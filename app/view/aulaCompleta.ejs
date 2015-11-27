@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link href="estilo.css" type="text/css" rel="stylesheet">
+	</head>
+	
+	<body onload="iniciar()">
+		<h1 id="Título">Consulta de aulas</h1>
+		
+		<br/>
+		
+		<div>
+			<div>
+				<form name="descDaAula" onsubmit="enviarReq()">
+					Sigla da aula:<br>
+					<input type="text" name="sigla">
+					<br>
+					Dia:<br>
+					<input type="text" name="dia">
+					<br>
+					Mes:<br>
+					<input type="text" name="mes">
+					<br>
+					Ano:<br>
+					<input type="text" name="ano">
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+				</form>
+				
+				<br><br><br>
+				
+				<div id="frases">
+					
+				</div>
+
+			</div>
+		</div>
+		<script src="solicitarAula.js"></script>
+	</body>
+		
+	
+</html>

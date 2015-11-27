@@ -1,6 +1,7 @@
 var https = require('https');
 var fs = require('fs');
 var app = require('./config/express')();
+require('./config/dataBase.js')('mongodb://localhost/transcritor');
 
 var options = {
 	key : fs.readFileSync('./certificados/server.key'),

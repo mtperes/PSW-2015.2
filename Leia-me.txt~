@@ -7,6 +7,7 @@ https://localhost:8080/transcritor
 
 Lista a ser resolvida:
 
+1º Conectar o servidor com o SGBD para guardar apenas as frases definitivas que estão sendo recebidas por ajax pelo serviço de transcrição usado pelo navegador
 2º Montar a interface gráfica da página do usuário
 3º Elaborar as outras páginas de interação
 4º Construir o serviço de envio do arquivo final da aula por email

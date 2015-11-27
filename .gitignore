@@ -1,3 +1,6 @@
 certificados/server.key
 certificados/server.crt
 publico/transcreverMonitorandoMic.js
+node_modules
+consulta.js
+publico/libs
