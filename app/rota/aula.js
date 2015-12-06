@@ -1,7 +1,7 @@
-var controlador = require('../controller/aula.js')(); //chama o controller responsável pelo serviço de transcrição
+var controlador = require('../controller/aula.js')(); //chama o controller responsável por frase
 
 module.exports = function (app)
 {
-	app.post('/aula', controlador.cadastrarAula); //GET do framework. 1º parâmetro: rota definina na URL. 2º parâmetro: função a ser executada
-	app.get('/aula', controlador.exibeAulas);
+	app.post('/aula', controlador.cadastrarAula);// metodo responsavel por adiciona frase
+	app.get('/aula', controlador.exibeAulas); // metodo responsavel por exibe aula
 }
