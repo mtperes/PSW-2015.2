@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>Transcritor</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!--<link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" title="Angular Material CSS" charset="utf-8" /> -->
+		<link rel="stylesheet" href="estilo.css" title="Estilo" charset="utf-8" />
+	</head>
+	<body id="body">
+		<header id="header">
+			<div id="cabecalho">
+			PSW {1502}
+			</div>
+			<div id="nav" align="right">
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Cadastro
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Aulas
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Configurações
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Sair
+				</button>
+			</div>
+		</header>
+		<div id="main" ng-app="myApp" ng-controller="transcritorController">
+			<md-content layout-align="start" style="height:100%; overflow:hidden;" >
+				<md-toolbar id="materia">
+					<b>
+					<div id="nome"> Projeto de Software Web </div>
+					<div id="data" align="right"> 20/11/2015 </div>
+					</b>
+				</md-toolbar>
+				<hr color=#2F5387 size=2>
+				<md-content layout="row" flex layout-fill>
+					<div id="det_materia">
+						Professor: <text class="detalhe"> André Neves </text>
+						Disciplina: <text class="detalhe"> PSW </text>
+						Turno: <text class="detalhe"> Noite </text>
+						Período: <text class="detalhe"> 4º </text>
+					</div>
+					<div id="transc" align="center">
+					Transcrição de fala
+					</div>
+					<!-- Container da transcrição -->
+					<div id="frases_container" flex="66" layout-fill layout="column" style="padding:10px 10px 10px 10px; overflow: auto; 
+					background-color: lightgray;">
+						<md-button class="md-fab md-fab-top-right" style="z-index:2 position:relative" aria-label=""
+						ng-click="toggleReconhecimento()">
+							<md-icon md-svg-src="{{buttonIcon}}" ></md-icon>
+						</md-button>
+						<md-whiteframe ng-repeat="item in frases" style="margin-bottom:20px; padding:10px; background-color:white;" class="md-whiteframe-2dp">
+							<h4>{{item.dthr | date:'dd/MM/yyyy HH:mm:ss'}}</h4>
+							<div>{{ item.text}}</div>
+						</md-whiteframe>
+						<md-whiteframe style=" background-color: aquamarine" ng-show="temp != null || temp != ''" class="md-whiteframe-2dp">
+							{{temp}}
+						</md-whiteframe>
+						<div id="bottom" style="height:200px; margin-bottom:200px;">
+						</div>
+					</div>
+					<div flex style="background-color: #2196F3" layout-fill layout="row" layout-align="right end">
+						<div postion="relative" style="height:100%;width:100%">
+						</div>
+					</div>
+				</md-content>
+			</md-content>
+		</div>
+		<aside id="aside">
+		</aside>
+
+
+		<script src="libs/angular/angular.js"></script>
+		<script src="libs/angular-animate/angular-animate.min.js"></script>
+		<script src="libs/angular-aria/angular-aria.min.js"></script>
+		<script src="libs/angular-material/angular-material.min.js"></script>
+
+
+		<script src="js/app.js" ></script>
+		<script src="js/controllers/transcritorController.js" ></script>
+	</body>
+</html>
