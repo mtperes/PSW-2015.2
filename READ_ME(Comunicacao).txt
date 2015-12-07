@@ -10,3 +10,6 @@ Lista a ser resolvida:
 2º Montar a interface gráfica da página do usuário
 3º Elaborar as outras páginas de interação
 4º Construir o serviço de envio do arquivo final da aula por email
+
+link para documentação (em andamento)
+https://docs.google.com/document/d/1kcrB-5LlWG7uXfci8ScXZ9bE1KveL0pGVUGv4VuJLVc/edit 
