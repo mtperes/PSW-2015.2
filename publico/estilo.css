@@ -1,4 +1,71 @@
+#header{
+background-color: #72839D;
+}
+
+#cabecalho{
+float:left;
+margin-left: 1%;
+color: white;
+}
+
+#nav{
+margin-right: 5%;
+}
+
+.botao{
+background-color: #72839D;
+border: none;
+color: white;
+font-size: 13px;
+}
+
+#main{
+margin-right: 5%;
+margin-left: 5%;
+color: navy;
+margin-top: 3%;
+}
+
+#materia{
+color: #2F5387;
+}
+
+#nome{
+float: left;
+text-transform: uppercase;
+font-size: 23px;
+}
+
+#data{
+font-size: 20px;
+}
+
+#det_materia{
+background-color: rgb(188, 212, 248);
+text-align: center;
+font-size: 18px;
+height: 60px;
+margin-top: 3%;
+margin-bottom: 3%;
+resize: true;
+}
+
+.detalhe{
+color: gray;
+}
+
+#transc{
+font-size: 40px;
+margin-bottom: 3%;
+}
+
+
+
 #texto
 {
-	color: blue;
+color: blue;
+}
+
+#aside{
+
 }
