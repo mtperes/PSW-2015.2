@@ -17,6 +17,7 @@ background-color: #72839D;
 border: none;
 color: white;
 font-size: 13px;
+cursor: pointer;
 }
 
 #main{
@@ -41,13 +42,13 @@ font-size: 20px;
 }
 
 #det_materia{
-background-color: rgb(188, 212, 248);
+background-color: #BCD4F8;
 text-align: center;
 font-size: 18px;
 height: 60px;
 margin-top: 3%;
 margin-bottom: 3%;
-resize: true;
+padding-top: 3%;
 }
 
 .detalhe{
@@ -59,11 +60,43 @@ font-size: 40px;
 margin-bottom: 3%;
 }
 
+#frases_container{
+border-style: solid;
+border-width: 2px;
+border-color: #083A77;
+border-radius: 16px;
+resize: both;
+overflow: auto;
+}
 
+#first{
+background-color: #BCD4F8;
+}
 
-#texto
-{
-color: blue;
+.left{
+float: left;
+text-align: center;
+border-right-style: dashed;
+border-color: #889BBB;
+width: 6%;
+}
+
+.right{
+padding-left: 10%;
+}
+
+#impar{
+background-color: #D6DEE9;
+}
+
+.button{
+border-radius: 50%;
+background-color: #BCD4F8;
+border: none;
+padding: 5px 10px 5px 10px;
+display: inline-block;
+margin-top: 3%;
+cursor: pointer;
 }
 
 #aside{
