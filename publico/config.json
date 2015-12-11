@@ -1,0 +1,5 @@
+{
+  "URL_TRANSCRICAO_TEMPORARIA": "https://localhost:8080/transcricao/temporaria",
+  "URL_TRANSCRICAO_FINAL": "https://localhost:8080/transcricao/final",
+  "LANGUAGE": "pt-BR"
+}
