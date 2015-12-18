@@ -103,7 +103,14 @@ border: none;
 padding: 5px 10px 5px 10px;
 display: inline-block;
 margin-top: 3%;
+margin-right: 10px;
 cursor: pointer;
+padding: 13px;
+border-radius: 10px;
+}
+
+.button::after hover{
+    cursor:pointer;
 }
 
 #aside {
@@ -117,17 +124,20 @@ overflow:hidden;
 width:25%; 
 position:fixed;
 top: 4.2%;
-right: -28%;
+right:0;
+
 }
 
-#aside:hover, #aside:focus,  #aside:active  {
+.hide{display:none;}
+
+/*#aside:hover, #aside:focus,  #aside:active  {
 overflow-y:scroll;
 -moz-transform: translate(-320px, 0);
 -webkit-transform: translate(-320px, 0);
 -o-transform: translate(-320px, 0);
 transform: translate(-320px, 0);
 padding-left:0;
-}
+}*/
 
 .label{
 padding-top: 20%;

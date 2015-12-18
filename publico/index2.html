@@ -1,122 +1,141 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-	<head lang="en">
-		<meta charset="UTF-8">
-		<title>Transcritor</title>
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-		<!--<link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" title="Angular Material CSS" charset="utf-8" /> -->
-		<link rel="stylesheet" href="estilo.css" title="Estilo" charset="utf-8" />
-	</head>
-	<body id="body">
-		<header id="header">
-			<div id="cabecalho">
-			PSW {1502}
-			</div>
-			<div id="nav" align="right">
-				<button ng-click="$mdOpenMenu()" class="botao">
-					Cadastro
-				</button>
-				<button ng-click="$mdOpenMenu()" class="botao" onclick="window.open('files.html','_parent')">
-					Aulas
-				</button>
-				<button ng-click="$mdOpenMenu()" class="botao">
-					Configurações
-				</button>
-				<button ng-click="$mdOpenMenu()" class="botao">
-					Sair
-				</button>
-			</div>
-		</header>
-		<div id="main" ng-app="myApp" ng-controller="transcritorController">
-			<md-content layout-align="start" style="height:100%; overflow:hidden;" >
-				<md-toolbar id="materia">
-					<b>
-					<div id="nome"> Projeto de Software Web </div>
-					<div id="data" align="right"> 20/11/2015 </div>
-					</b>
-				</md-toolbar>
-				<hr color=#2F5387 size=2>
-				<div id="det_materia">
-					Professor: <text class="detalhe"> André Neves </text>
-					Disciplina: <text class="detalhe"> PSW </text>
-					Turno: <text class="detalhe"> Noite </text>
-					Período: <text class="detalhe"> 4º </text>
-				</div>
-				<div id="transc" align="center">
-					Transcrição de fala
-				</div>
-				<!-- Container da transcrição -->
-				<div id="frases_container">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Transcritor</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--<link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" title="Angular Material CSS" charset="utf-8" /> -->
+    <link rel="stylesheet" href="estilo.css" title="Estilo" charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body id="body">
+    <header id="header">
+        <div id="cabecalho">
+            PSW {1502}
+        </div>
+        <div id="nav" align="right">
+            <button ng-click="$mdOpenMenu()" class="botao">
+                Cadastro
+            </button>
+            <button ng-click="$mdOpenMenu()" class="botao" onclick="window.open('files.html','_parent')">
+                Aulas
+            </button>
+            <button ng-click="$mdOpenMenu()" class="botao">
+                Configurações
+            </button>
+            <button ng-click="$mdOpenMenu()" class="botao">
+                Sair
+            </button>
+        </div>
+    </header>
+    <div id="main" ng-app="myApp" ng-controller="transcritorController">
+        <md-content layout-align="start" style="height:100%; overflow:hidden;">
+            <md-toolbar id="materia">
+                <b>
+                    <div id="nome"> Projeto de Software Web </div>
+                    <div id="data" align="right"> 20/11/2015 </div>
+                </b>
+            </md-toolbar>
+            <hr color=#2F5387 size=2>
+            <div id="det_materia">
+                Professor: <text class="detalhe"> André Neves </text>
+                Disciplina: <text class="detalhe"> PSW </text>
+                Turno: <text class="detalhe"> Noite </text>
+                Período: <text class="detalhe"> 4º </text>
+            </div>
+            <div id="transc" align="center">
+                Transcrição de fala
+            </div>
+            <!-- Container da transcrição -->
+            <div id="frases_container">
 
-						<div ng-repeat="frase in frases" id="frase_{{frase.seq}}">
+                <div ng-repeat="frase in frases" id="frase_{{frase.seq}}">
 
-							<div class="left {{frase.getClass()}}"> {{frase.date | date:'dd/MM/yyyy'}} </div>
-							<div class="right {{frase.getClass()}}"> {{frase.texto}}</div>
+                    <div class="left {{frase.getClass()}}"> {{frase.date | date:'dd/MM/yyyy'}} </div>
+                    <div class="right {{frase.getClass()}}"> {{frase.texto}}</div>
 
-						</div>
-<!--						<div id="first" class="left" style="border-right-style: none;"> Hora </div>
-						<div id="first" style="padding-left: 14%;"> Texto </div>
+                </div>
+                <!--						<div id="first" class="left" style="border-right-style: none;"> Hora </div>
+                                        <div id="first" style="padding-left: 14%;"> Texto </div>
 
-						<div class="left"> 19:00:03 </div>
-						<div class="right"> Boa noite senhores tudo bem com voces </div>
-						<div id="impar" class="left"> 19:00:55 </div>
-						<div id="impar" class="right"> Hoje iremos ver diagramas de caso de uso e</div>
+                                        <div class="left"> 19:00:03 </div>
+                                        <div class="right"> Boa noite senhores tudo bem com voces </div>
+                                        <div id="impar" class="left"> 19:00:55 </div>
+                                        <div id="impar" class="right"> Hoje iremos ver diagramas de caso de uso e</div>
 
-						<div class="left"> 19:01:09 </div>
-						<div class="right"> Sei que temos pouco tempo e por isso vamos manter o foco </div>
-						<div id="impar" class="left"> 19:01:46 </div>
-						<div id="impar" class="right"> Antes preciso saber se alguém tem dúvidas sobre o levantamento de requisitos funcionais e não funcionais, 
-						para podermos andar com o conteúdo da matéria.</div>
-						<div class="left"> 19:02:05 </div>
-						<div class="right"> Ótimo! </div>
-						<div id="impar" class="left"> 19:02:11 </div>
-						<div id="impar" class="right"> Vamos prosseguir então.</div>
+                                        <div class="left"> 19:01:09 </div>
+                                        <div class="right"> Sei que temos pouco tempo e por isso vamos manter o foco </div>
+                                        <div id="impar" class="left"> 19:01:46 </div>
+                                        <div id="impar" class="right"> Antes preciso saber se alguém tem dúvidas sobre o levantamento de requisitos funcionais e não funcionais,
+                                        para podermos andar com o conteúdo da matéria.</div>
+                                        <div class="left"> 19:02:05 </div>
+                                        <div class="right"> Ótimo! </div>
+                                        <div id="impar" class="left"> 19:02:11 </div>
+                                        <div id="impar" class="right"> Vamos prosseguir então.</div>
 
-						-->
-
-
-				</div>
-				<center>
-					<button class="button" ng-click="ligarDesligar()">Iniciar</button>
-					<button class="button">Pause Scroll</button>
-					<button class="button">Download</button>
-				</center>
-			</md-content>
-			<span class="menu-anchor"></span>
-			<menu>
-			</menu>
-		</div>
-		
-		<aside id="aside">
-			<center>
-			<div class="label">
-				Nota sobre a aula
-			</div>
-			<div class="nota" style="height: 80px;">
-				Última aula antes da AV1, mas não rolou nenhuma revisão.
-			</div>
-			<div class="label">
-				Anotação
-			</div>
-			<div id="data_transc-nota">
-				Ref. Transcrição: [ 19:01:46 ]
-			</div>
-			<div class="nota">
-				Preciso estudar mais sobre isso.
-			</div>
-			</center>
-		</aside>
-
-		<script src="libs/angular/angular.js"></script>
-		<script src="libs/angular-animate/angular-animate.min.js"></script>
-		<script src="libs/angular-aria/angular-aria.min.js"></script>
-		<script src="libs/angular-material/angular-material.min.js"></script>
+                                        -->
 
 
-		<script src="js/app.js" ></script>
-		<!--Controller novo do angular -->
-		<script src="js/controllers/transcricaoController.js" ></script>
-		<script src="js/services/transcritorService.js" ></script>
+            </div>
+            <center>
+                <button class="button" ng-click="ligarDesligar()">Iniciar</button>
+                <button class="button">Pause Scroll</button>
+                <button class="button">Download</button>
+            </center>
+        </md-content>
+        <span id="btn-note" class="menu-anchor" onclick="mostrarNotas()"></span>
+        <menu></menu>
+    </div>
 
-	</body>
+    <aside id="aside" class="hide">
+        <center>
+            <div class="label">
+                Nota sobre a aula
+            </div>
+            <div class="nota" style="height: 80px;">
+                Última aula antes da AV1, mas não rolou nenhuma revisão.
+            </div>
+            <div class="label">
+                Anotação
+            </div>
+            <div id="data_transc-nota">
+                Ref. Transcrição: [ 19:01:46 ]
+            </div>
+            <div class="nota">
+                Preciso estudar mais sobre isso.
+            </div>
+        </center>
+    </aside>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <script src="libs/angular-aria/angular-aria.min.js"></script>
+    <script src="libs/angular-material/angular-material.min.js"></script>
+
+
+    <script src="js/app.js"></script>
+    <!--Controller novo do angular -->
+    <script src="js/controllers/transcricaoController.js"></script>
+    <script src="js/services/transcritorService.js"></script>
+    <script type="text/javascript">
+        function mostrarNotas() {
+
+            if ($("#aside").hasClass("hide"))
+            {
+                $("#main").css("width", "65%");
+
+                $("#aside").removeClass("hide");
+
+
+            }
+            else {
+                $("#aside").addClass("hide");
+
+                $("#main").css("width", "90%");
+            }
+        }
+    </script>
+</body>
+
+
 </html>
