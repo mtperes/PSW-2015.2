@@ -1,7 +1,7 @@
 'use strict';
 
 myApp.controller('transcritorController', ['$scope', '$rootScope',
-    function($scope,  $rootScope) {
+    function($scope,  $rootScope ) {
 
         ///////////////////////////////////////////////////////////////////// variáveis do contexto de controle ////////////////////////////////////////////////////////
 
@@ -64,9 +64,16 @@ myApp.controller('transcritorController', ['$scope', '$rootScope',
                     dthr: new Date(),
                     text: frase.recuperar()
                 });
+
             }
 
+            $scope.temp = null;
+
             $scope.$apply();
+           // $scope.goToBottom();
+
+            var objDiv = document.getElementById("frases_container");
+            objDiv.scrollTop = objDiv.scrollHeight;
 
             tratarTransc(frase.recuperar(), "fala_convertida?transc", linhaTransc); //atualiza a seção que contém todo o texto da aula
             console.log("fim da transcricao");
@@ -81,6 +88,9 @@ myApp.controller('transcritorController', ['$scope', '$rootScope',
 //exibe o resultado da transcrição
         function resultadoRecebido(evento) {
             frase.armazenar(event.results[0][0].transcript); //armazena o resultado temporário na variável global "frase"
+
+             $scope.temp = event.results[0][0].transcript;
+             $scope.$apply();
             linhaTransc = criarLinha(); //cria uma linha na seção que guarda o histórico da aula para mais tarde guardar o resultado final
             tratarTransc(event.results[0][0].transcript, "transcricao_temporaria?falaTemp", texto); //envia ao servidor e ao elemento "texto" (do html) o resultado provisório
         }
@@ -114,12 +124,9 @@ myApp.controller('transcritorController', ['$scope', '$rootScope',
             return linha; //retorna o elemento criado
         }
 
-
 //Métodos Publicos do controlador...
 
-
         $scope.toggleReconhecimento = function () {
-
 
             if (rodando == false) {
                 rodando = true;
@@ -131,8 +138,6 @@ myApp.controller('transcritorController', ['$scope', '$rootScope',
             }
 
         }
-
-
 
     }
 ]);

@@ -1,0 +1,32 @@
+﻿Schema:
+	
+var esquema = new Schema({
+	professor		: { type: String},
+	disciplina		: { type: String},
+	turno			: { type: String},
+	periodo			: { type: String},
+	data			: {type: String},
+	frase			: [{texto: String, data: String, versionKey	: false}],
+});	
+
+Registro:
+	
+{
+	"professor":"Andre",
+	"disciplina":"PSW",
+	"turno":"Noite"
+	"periodo":"4"
+	"data":"04/12/2015 19:00:00"
+	"frase": [
+		
+		{
+			"texto":"A importancia da arquitetura de software",
+			"date":"04/12/2015 19:00:00"
+		},
+		{
+			"texto":"Encapsulamento é um dos principais pontos da POO",
+			"date":"04/12/2015 19:00:00"
+		}
+		
+	]
+}

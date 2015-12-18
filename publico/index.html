@@ -18,11 +18,37 @@
 
             <md-toolbar >
 
-                <div class="md-toolbar-tools">
+                <div>
 
-                    <h2><span>Transcritor</span></h2>
+                    <h2 class="md-toolbar-tools"> <span>Transcritor</span></h2>
 
-                    <span flex></span>
+                    <md-menu-bar >
+                        <md-menu>
+                            <button ng-click="$mdOpenMenu()">
+                                 Cadastro
+                            </button>
+                            <md-menu-content>
+                                <md-menu-item>
+                                    <md-button style="color:black;">
+                                      Iniciar cadastro
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-divider></md-menu-divider>
+                            </md-menu-content>
+                        </md-menu>
+                        <button ng-click="$mdOpenMenu()">
+                            Aulas
+                        </button>
+
+                        <button ng-click="$mdOpenMenu()">
+                            Configurações
+                        </button>
+
+                        <button ng-click="$mdOpenMenu()">
+                            Sair
+                        </button>
+
+                    </md-menu-bar>
 
                 </div>
 
@@ -32,32 +58,47 @@
 
                 <!-- Container da transcrição -->
 
-                <div flex="66" layout-fill style="overflow: auto"
-                     layout="column">
+                <div id="frases_container"
+                     flex="66" layout-fill
 
-                    <md-card class="md-3-line" ng-repeat="item in frases">
+                     layout="column"
+                     style="padding:10px 10px 10px 10px;
+                            overflow: auto;
+                            background-color: lightgray;">
 
-                        <md-list-item class="md-2-line"
-                                      ng-if="item != null">
-                            <div class="md-list-item-text" layout="column">
-                                <h3>{{item.dthr | date:'dd/MM/yyyy HH:mm:ss'}}</h3>
-                                <p>{{ item.text}}</p>
-                            </div>
-                        </md-list-item>
-
-                    </md-card>
-
-
-                </div>
-
-                <div flex style="background-color: #2196F3" layout-fill
-                     layout="column" layout-align="space-around center">
-DEMO
-
-                    <md-button class="md-fab md-fab-top-right" aria-label=""
+                    <md-button class="md-fab md-fab-top-right" style="z-index:2 position:relative" aria-label=""
                                ng-click="toggleReconhecimento()">
                         <md-icon md-svg-src="{{buttonIcon}}" ></md-icon>
                     </md-button>
+
+
+
+                    <md-whiteframe ng-repeat="item in frases"
+                            style="margin-bottom:20px; padding:10px; background-color:white;" class="md-whiteframe-2dp">
+
+                        <h4>{{item.dthr | date:'dd/MM/yyyy HH:mm:ss'}}</h4>
+                        <div>{{ item.text}}</div>
+
+                    </md-whiteframe>
+
+                    <md-whiteframe style=" background-color: aquamarine"
+                            ng-show="temp != null || temp != ''"
+                                   class="md-whiteframe-2dp">
+
+                        {{temp}}
+
+                    </md-whiteframe>
+
+                    <div id="bottom" style="height:200px; margin-bottom:200px;">
+
+                    </div>
+
+                </div>
+
+                <div flex style="background-color: #2196F3" layout-fill layout="row" layout-align="right end">
+                    <div postion="relative" style="height:100%;width:100%">
+
+                    </div>
 
                 </div>
 
