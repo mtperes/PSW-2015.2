@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>Transcritor</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!--<link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" title="Angular Material CSS" charset="utf-8" /> -->
+		<link rel="stylesheet" href="estilo.css" title="Estilo" charset="utf-8" />
+	</head>
+	<body id="body">
+		<header id="header" style="opacity:0.3;">
+			<div id="cabecalho">
+			PSW {1502}
+			</div>
+			<div id="nav" align="right">
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Cadastro
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Aulas
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Configurações
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Sair
+				</button>
+			</div>
+		</header>
+		<div id="main" ng-app="myApp" ng-controller="transcritorController">
+			<center>
+				<div style="font-size: 50px; color: #6B7C98;">
+					PSW {1502}
+				</div>
+				<div style="background-color: #BCD4F8; font-size: 18px; height: 280px; width:28%; border-radius: 18px;">
+					<div align=left style="margin-left: 15%; padding-top: 70px;">
+						Usuário
+					</div>
+					<div align=left style="margin-left: 15%;">
+						<input>
+					</div>
+					<div align=left style="margin-left: 15%; padding-top: 20px;">
+						Senha
+					</div>
+					<div align=left style="margin-left: 15%;">
+						<input type=password>
+					</div>
+					<div>
+						<button style="margin-top: 30px; background-color: #BCD4F8; border: none; color: navy; font-size: 13px; cursor: pointer;">
+						<b>Cadastrar</b>
+						<button style="background-color:	#fa7c0b; border-color: navy; border-width: 3px;"> Entrar
+					</div>
+				</div>
+			</center>
+		</div>
+
+		<script src="libs/angular/angular.js"></script>
+		<script src="libs/angular-animate/angular-animate.min.js"></script>
+		<script src="libs/angular-aria/angular-aria.min.js"></script>
+		<script src="libs/angular-material/angular-material.min.js"></script>
+
+
+		<script src="js/app.js" ></script>
+		<script src="js/controllers/transcritorController.js" ></script>
+	</body>
+</html>

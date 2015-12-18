@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>Transcritor</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!--<link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" title="Angular Material CSS" charset="utf-8" /> -->
+		<link rel="stylesheet" href="estilo_files.css" title="Estilo" charset="utf-8" />
+	</head>
+	<body id="body">
+		<header id="header">
+			<div id="cabecalho">
+			PSW {1502}
+			</div>
+			<div id="nav" align="right">
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Cadastro
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Aulas
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Configurações
+				</button>
+				<button ng-click="$mdOpenMenu()" class="botao">
+					Sair
+				</button>
+			</div>
+		</header>
+		<div id="main" ng-app="myApp" ng-controller="transcritorController">
+			<md-content layout-align="start" style="height:100%; overflow:hidden;" >
+				<md-toolbar id="materia">
+					<b>
+					<div id="info"> Aulas </div>
+					</b>
+				</md-toolbar>
+				<hr color=#2F5387 size=2>
+				<div id="det_busca">
+				  <div id="filter">
+						Filtro de Pesquisa: 
+						<input type="radio" name="filtro"> Data
+						<input type="radio" name="filtro"> Professor
+						<input type="radio" name="filtro"> Disciplina
+						<input type="radio" name="filtro"> Período
+						<input type="radio" name="filtro"> Turno
+					</div id="search">
+						<input id="termos">
+						<button id="search_button"> Buscar
+					<div>
+					</div>
+
+				</div>
+				<div id="transc" align="center">
+					Aulas Gravadas
+				</div>
+				<!-- Container da transcrição -->
+				<div id="frases_container">
+						<div id="first" class="left" style="border-right-style: none;"> Data </div>
+						<div id="first" class="right"> Professor </div>
+						<div id="first" class="right"> Disciplina </div>
+						<div id="first" class="right"> Período </div>
+						<div id="first" class="right"> Turno </div>
+						<div id="first" style="padding-left: 80%;"> Arquivo </div>
+						
+						<div class="left"> 22/01/2014 </div>
+						<div class="right"> Andre Neves </div>
+						<div class="right"> Desenvolvimento WEB </div>
+						<div class="right"> 2014.01 </div>
+						<div class="right"> Noite </div>
+						<div style="padding-left: 80%;"> <button class="button">Baixar <br>Arquivo</button> </div>
+						
+						<div class="left"> 22/01/2014 </div>
+						<div class="right"> Eduardo Barreto </div>
+						<div class="right"> Lingua Portuguesa </div>
+						<div class="right"> 2014.01 </div>
+						<div class="right"> Noite </div>
+						<div style="padding-left: 80%;"> <button class="button">Baixar <br>Arquivo</button> </div>
+						
+						<div class="left"> 22/01/2014 </div>
+						<div class="right"> Claudio Bispo </div>
+						<div class="right"> Algebra Linear </div>
+						<div class="right"> 2015.01 </div>
+						<div class="right"> Manhã </div>
+						<div style="padding-left: 80%;"> <button class="button">Baixar <br>Arquivo</button> </div>
+				</div>
+			</md-content>
+			<span class="menu-anchor"></span>
+			<menu>
+			</menu>
+		</div>
+
+		<script src="libs/angular/angular.js"></script>
+		<script src="libs/angular-animate/angular-animate.min.js"></script>
+		<script src="libs/angular-aria/angular-aria.min.js"></script>
+		<script src="libs/angular-material/angular-material.min.js"></script>
+
+
+		<script src="js/app.js" ></script>
+		<script src="js/controllers/transcritorController.js" ></script>
+	</body>
+</html>

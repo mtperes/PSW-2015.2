@@ -24,6 +24,7 @@ background-color: #72839D;
 border: none;
 color: white;
 font-size: 13px;
+cursor: pointer;
 }
 
 #main{
@@ -48,13 +49,13 @@ font-size: 20px;
 }
 
 #det_materia{
-background-color: rgb(188, 212, 248);
+background-color: #BCD4F8;
 text-align: center;
 font-size: 18px;
 height: 60px;
 margin-top: 3%;
 margin-bottom: 3%;
-resize: true;
+padding-top: 3%;
 }
 
 .detalhe{
@@ -66,13 +67,103 @@ font-size: 40px;
 margin-bottom: 3%;
 }
 
-
-
-#texto
-{
-color: blue;
+#frases_container{
+border-style: solid;
+border-width: 2px;
+border-color: #083A77;
+border-radius: 16px;
+resize: both;
+overflow: auto;
 }
 
-#aside{
+#first{
+background-color: #BCD4F8;
+}
 
+.left{
+float: left;
+text-align: center;
+border-right-style: dashed;
+border-color: #889BBB;
+width: 6%;
+}
+
+.right{
+padding-left: 10%;
+}
+
+.impar{
+background-color: #D6DEE9;
+}
+
+.button{
+border-radius: 50%;
+background-color: #BCD4F8;
+border: none;
+padding: 5px 10px 5px 10px;
+display: inline-block;
+margin-top: 3%;
+cursor: pointer;
+}
+
+#aside {
+padding:0 50px 0 0;
+-moz-transition: all 0.5s ease;
+-webkit-transition: all 0.5s ease;
+transition: all 0.5s ease;
+background-color: #BCD4F8;
+height:100%;
+overflow:hidden;
+width:25%; 
+position:fixed;
+top: 4.2%;
+right: -28%;
+}
+
+#aside:hover, #aside:focus,  #aside:active  {
+overflow-y:scroll;
+-moz-transform: translate(-320px, 0);
+-webkit-transform: translate(-320px, 0);
+-o-transform: translate(-320px, 0);
+transform: translate(-320px, 0);
+padding-left:0;
+}
+
+.label{
+padding-top: 20%;
+color: #325389;
+font-size: 23px
+}
+
+.nota{
+background-color: #D6E5FA;
+color: gray;
+height: 200px;
+margin: 3% 10% 3% 10%;
+padding-top: 3%;
+}
+
+#data_transc-nota{
+color: white;
+background-color: #6B7C98;
+margin: 3% 10% -3% 10%;
+}
+
+.menu-anchor {
+top: 50%;
+float: right;
+width: 40px;
+height: 32px;
+cursor: pointer;
+background: #fa7c0b;
+}
+
+.menu-anchor:before {
+content: "";
+display: block;
+margin: 7px auto;
+width: 70%;
+height: 0.25em;
+background: #305488;
+box-shadow: 0 .45em 0 0 #305488, 0 .9em 0 0 #305488;
 }
